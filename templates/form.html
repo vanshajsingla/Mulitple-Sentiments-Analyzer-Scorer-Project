@@ -1,0 +1,145 @@
+<html>
+    <head>
+	<style>
+body{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: larger;
+ }
+table, th, td {
+  border: 1px solid black;
+  border-color: black;
+  color: black;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: larger;
+}
+div{
+  color:black;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: larger;
+}
+.table{
+  background-color: orange;
+}
+.container_c11{
+  border: 3px solid rgb(0, 0, 0);
+  background-image: url("https://images.squarespace-cdn.com/content/v1/5475f6eae4b0821160f6ac3e/1522789192702-TWO80J1HB8XBFBDL073U/Internet+of+Things+illustration");
+  background-attachment: fixed;
+  background-color: rgb(0, 0, 0);
+  background-color: aquamarine;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: larger;
+}
+.inner{
+  background-color: orangered;
+  color:black;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#btn{
+  background-color: aquamarine;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background-color: orangered;
+  border-radius:50%;
+  border-style:none;
+}
+#second{
+  background-color: orangered;
+  color: black;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#text{
+  background-color: aliceblue;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+</style>
+        <title>{{ title }} Sentiment Analysis</title>
+        <!--link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"-->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
+      <div class="container_c11" style="color: red" >
+	<div class="inner">
+		<h1>Sentiment Analysis</h1>
+		<p>A machine learning end to end  web app for <b>"Sentiment Analysis" </b>model created using Zero Shot Learning &amp; BERT</p> 
+    <p>Project Made by : </p>
+    <!-- <br> -->
+    <p>Vanshaj Singla</p>
+    <p>Copywright @Vanshaj Singla</p>
+	</div>
+		</br></br><div align="center">
+			<form method="POST">
+				<textarea name="text1" placeholder="Type your Review....." rows="10" cols="109"></textarea><br><br>
+
+				<button id="btn" type="submit">Submit</button>
+			</form>
+		</div>
+        {% if final %}
+		
+<!--result start -->		
+      </br></br> 
+       <div align="center">
+           </br>  </br>
+       <div id="second">
+		   <h2 id="bg-success">The Sentiment of</h2>
+      
+		   <p id="text">'{{ text }}'</p>
+		   <h2>is {{ final }}!!</h2>
+       </div>
+			<h2 id="text">Score table</h2>
+
+
+<div class="container table-responsive-sm">
+<table class="table">
+  <tr>
+    <th>SENTIMENT METRIC</th>
+    <th>SCORE</th> 
+  </tr>
+  <tr>
+    <td>{{sentiment1}}</td>
+    <td>{{text1}}</td>
+    
+  </tr>
+  <tr>
+    <td>{{sentiment2}}</td>
+    <td>{{text2}}</td>
+    
+  </tr>
+  <tr>
+    <td>{{sentiment3}}</td>
+    <td>{{text3}}</td>
+    
+  </tr>
+  <tr>
+    <td>{{sentiment4}}</td>
+    <td>{{text4}}</td>
+    
+  </tr>
+  <tr>
+    <td>{{sentiment5}}</td>
+    <td>{{text5}}</td>
+    
+  </tr>
+  <tr>
+    <td>{{sentiment6}}</td>
+    <td>{{text6}}</td>
+  </tr>
+  <tr>
+    <td>{{sentiment7}}</td>
+    <td>{{text7}}</td>
+  </tr>
+</table>
+</div>
+
+            {% else %}
+            <p>{{error}}</p>
+            {% endif %}
+        </div></br></br>
+<!--result end -->			
+		
+		
+  </div>  </body>
+</html>
+

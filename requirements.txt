@@ -1,0 +1,9 @@
+Flask
+Flask-WTF
+gunicorn
+MarkupSafe
+WTForms
+nltk
+scikit-learn
+requests
+
